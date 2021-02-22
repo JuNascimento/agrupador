@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Header from '../components/header'
 import Loading from '../components/loading'
 import CreateGroup from '../components/createGroup'
+import GroupsList from '../components/groupsList'
 
 const App = () => {
 
@@ -44,11 +45,45 @@ const App = () => {
     }
   }
 
+  const groupsMock = [
+    {
+      name: 'Só vilão 2.0',
+      descricao: 'Grupo de amigões da Rural',
+      link: 'www.pedro.com'
+    },
+    {
+      name: 'Dona carochinha',
+      descricao: 'Melhor grupo da vizinhança',
+      link: 'www.plalalal.br'
+    },
+    {
+      name: 'Familia linda',
+      descricao: 'o q se diz aqui',
+      link: 'www.nao.sei.com'
+    },
+    {
+      name: 'Só vilão 2.0',
+      descricao: 'Grupo de amigões da Rural',
+      link: 'www.pedro.com'
+    },
+    {
+      name: 'Dona carochinha',
+      descricao: 'Melhor grupo da vizinhança',
+      link: 'www.plalalal.br'
+    },
+    {
+      name: 'Familia linda',
+      descricao: 'o q se diz aqui',
+      link: 'www.nao.sei.com'
+    },
+  ]
+
   return (
     <>
       <Header />
       <Loading />
       <CreateGroup />
+      <GroupsList groups={groupsMock} />
     </>
   )
 }
