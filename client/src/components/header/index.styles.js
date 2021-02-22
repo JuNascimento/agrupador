@@ -17,3 +17,14 @@ export const Logo = styled.span`
   }
 `
 
+export const Button = styled.span`
+  background-color: #25d366;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+
+  @media (min-width: 450px) {
+    padding: 15px;
+  }
+`

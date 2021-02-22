@@ -6,6 +6,8 @@ import GroupsList from '../components/groupsList'
 
 const App = () => {
   const [showGroups, setShowGroups] = useState(false)
+  const [createGroup, setCreateGroup] = useState(false)
+  const [showButton, setShowButton] = useState(false)
 
   useEffect(() => {
     getCoords()
@@ -41,10 +43,16 @@ const App = () => {
       }).then(() => {
         console.info('[COORDINATES] Deu tudo certo')
         setShowGroups(true)
+        setShowButton(true)
       })
     } catch (error) {
       console.error(`[COORDINATES] Deu esse erro aqui, ó --> ${error}`)
     }
+  }
+
+  const toggle = () => {
+    setShowGroups(!showGroups)
+    setCreateGroup(!createGroup)
   }
 
   const groupsMock = [
@@ -82,10 +90,10 @@ const App = () => {
 
   return (
     <>
-      <Header />
-      {!showGroups && <Loading />}
-      {showGroups && <GroupsList groups={groupsMock} />}
-      {<CreateGroup /> }
+      <Header toggle={toggle} createGroup={createGroup} showButton={showButton} />
+      {!showGroups && !createGroup && <Loading />}
+      {showGroups && !createGroup && <GroupsList groups={groupsMock} />}
+      {createGroup && <CreateGroup toggle={toggle} /> }
     </>
   )
 }

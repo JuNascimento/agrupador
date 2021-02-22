@@ -1,8 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { CreateGroupContent, Form, Input, InputElement, Create } from './index.styles'
 
-const CreateGroup = () => {
+const CreateGroup = ({ toggle }) => {
   return (
     <CreateGroupContent>
       <Form>
@@ -22,6 +23,10 @@ const CreateGroup = () => {
       </Form>
     </CreateGroupContent>
   )
+}
+
+CreateGroup.propTypes = {
+  toggle: PropTypes.func.isRequired,
 }
 
 export default CreateGroup
