@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../components/header'
 import Loading from '../components/loading'
 import CreateGroup from '../components/createGroup'
 import GroupsList from '../components/groupsList'
 
 const App = () => {
+  const [showGroups, setShowGroups] = useState(false)
 
   useEffect(() => {
     getCoords()
-  }, [])
+  })
 
   const geolocationDisponible = () => {
     let hasGeolocation = false
@@ -39,6 +40,7 @@ const App = () => {
         console.log('longitude', longitude)
       }).then(() => {
         console.info('[COORDINATES] Deu tudo certo')
+        setShowGroups(true)
       })
     } catch (error) {
       console.error(`[COORDINATES] Deu esse erro aqui, ó --> ${error}`)
@@ -81,9 +83,9 @@ const App = () => {
   return (
     <>
       <Header />
-      <Loading />
-      <CreateGroup />
-      <GroupsList groups={groupsMock} />
+      {!showGroups && <Loading />}
+      {showGroups && <GroupsList groups={groupsMock} />}
+      {<CreateGroup /> }
     </>
   )
 }
