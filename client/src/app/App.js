@@ -36,7 +36,7 @@ const App = () => {
         console.log('latitude', latitude)
         console.log('longitude', longitude)
       }).then(() => {
-        console.error('[COORDINATES] Deu tudo certo')
+        console.info('[COORDINATES] Deu tudo certo')
       })
     } catch (error) {
       console.error(`[COORDINATES] Deu esse erro aqui, ó --> ${error}`)
