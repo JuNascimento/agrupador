@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Header from '../components/header'
 import Loading from '../components/loading'
+import CreateGroup from '../components/createGroup'
 
 const App = () => {
 
@@ -47,6 +48,7 @@ const App = () => {
     <>
       <Header />
       <Loading />
+      <CreateGroup />
     </>
   )
 }
