@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { GroupContent, LinkGroup, Label, Info } from './index.styles'
+import { GroupContent, Button, Label, Info } from './index.styles'
 
 const GroupItem = ({ group }) => (
   <GroupContent>
@@ -13,7 +13,7 @@ const GroupItem = ({ group }) => (
       <Label>Descrição:</Label>
       <span>{group.descricao}</span>
     </Info>
-    <LinkGroup alt={group.link}>Entrar no grupo</LinkGroup>
+    <Button alt={group.link}>Entrar no grupo</Button>
   </GroupContent>
 )
 

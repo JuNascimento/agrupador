@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { CreateGroupContent, Form, Input, InputElement, Create } from './index.styles'
+import { CreateGroupContent, Form, Input, InputElement, Button } from './index.styles'
 
 const CreateGroup = ({ toggle }) => {
   return (
@@ -19,7 +19,7 @@ const CreateGroup = ({ toggle }) => {
           <label>Link</label>
           <InputElement type='text' />
         </Input>
-        <Create>Criar</Create>
+        <Button onClick={() => toggle()}>Criar</Button>
       </Form>
     </CreateGroupContent>
   )

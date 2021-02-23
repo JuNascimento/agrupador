@@ -19,12 +19,12 @@ export const Label = styled.div`
 `
 
 export const Spinner = styled.div`
-  border: 5px solid #fff;
+  border: 5px solid rgba(255, 255, 255, 1);
   border-radius: 50%;
   width: 50px;
   height: 50px;
   animation: spin 1s linear infinite;
-  border-left-color: #25d366;
+  border-left-color: rgba(37, 211, 102, 1);
   margin: 0 auto;
 
   @keyframes spin {
