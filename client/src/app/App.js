@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { GlobalStyle } from '../globalStyles'
 import Header from '../components/header'
 import Loading from '../components/loading'
 import CreateGroup from '../components/createGroup'
@@ -90,6 +91,7 @@ const App = () => {
 
   return (
     <>
+      <GlobalStyle />
       <Header toggle={toggle} createGroup={createGroup} showButton={showButton} />
       {!showGroups && !createGroup && <Loading />}
       {showGroups && !createGroup && <GroupsList groups={groupsMock} />}
